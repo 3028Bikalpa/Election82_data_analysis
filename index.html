@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nepal Election 2082 Data Analysis</title>
-  <meta name="description" content="A single-page summary of Nepal Election 2082 built from the Election82_data_analysis repository, including FPTP results, PR votes, turnout, margin analysis, and a 275-seat outlook.">
+  <meta name="description" content="A single-page summary of Nepal Election 2082, including FPTP results, PR votes, margin analysis, and a 275-seat outlook.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
@@ -931,7 +931,6 @@
           <a href="#timeline">Timeline</a>
           <a href="#results">Results</a>
           <a href="#comparison">Shift</a>
-          <a href="#turnout">Turnout</a>
           <a href="#highlights">Highlights</a>
           <a href="#winners">Winners</a>
           <a href="#analysis">Analysis</a>
@@ -947,14 +946,13 @@
             <div class="hero-copy">
               <div class="eyebrow">
                 <span class="eyebrow-dot"></span>
-                Repository-backed summary of Election 2082
+                Nepal Election 2082, explained through data
               </div>
               <h1>Nepal’s 2082 election, read through <span>real results</span>.</h1>
               <div class="hero-subtitle devanagari">मत परिणाम, मत-साझेदारी र सिट रूपान्तरणको एउटै कथा</div>
               <p class="hero-text">
-                This page turns the full <code>Election82_data_analysis</code> repository into a public-facing summary.
-                It uses the exported Election Commission constituency file, proportional vote totals, and the notebook’s
-                275-seat outlook to explain what happened in Nepal’s federal contest and what the analysis in this folder shows.
+                This page brings together official constituency results, proportional vote totals, and a 275-seat parliament outlook
+                to explain what happened in Nepal’s federal contest and how votes translated into seats.
               </p>
               <div class="hero-actions">
                 <a class="button primary" href="#results">See the seat outlook</a>
@@ -965,22 +963,17 @@
                 <article class="glass-card">
                   <div class="stat-label">Registered voters</div>
                   <div class="stat-value">18.90M</div>
-                  <div class="stat-sub">Unique constituency records in the repository sum to 18,903,689 voters across 165 constituencies.</div>
-                </article>
-                <article class="glass-card">
-                  <div class="stat-label">Counted turnout</div>
-                  <div class="stat-value">54.97%</div>
-                  <div class="stat-sub">10,390,724 counted votes from constituency-level totals, with strong provincial variation.</div>
+                  <div class="stat-sub">18,903,689 registered voters across all 165 House of Representatives constituencies.</div>
                 </article>
                 <article class="glass-card">
                   <div class="stat-label">FPTP winners</div>
                   <div class="stat-value">165</div>
-                  <div class="stat-sub">Direct constituency victories taken from official winner flags in the exported candidate dataset.</div>
+                  <div class="stat-sub">Direct constituency victories identified from official winner flags in the election results.</div>
                 </article>
                 <article class="glass-card">
                   <div class="stat-label">Projected majority</div>
                   <div class="stat-value">182 / 275</div>
-                  <div class="stat-sub">The notebook’s blended parliament outlook gives RSP a clear lead above the 138-seat majority line.</div>
+                  <div class="stat-sub">RSP sits well above the 138-seat majority mark in the blended parliament outlook.</div>
                 </article>
               </div>
             </div>
@@ -1007,8 +1000,8 @@
               <div class="section-card">
                 <h3>Top-line structure</h3>
                 <p class="section-intro">
-                  The repository combines <strong>10,516,325 FPTP candidate votes</strong> with
-                  <strong>10,835,025 PR votes</strong>. Only parties crossing the notebook’s
+                  This election view combines <strong>10,516,325 FPTP candidate votes</strong> with
+                  <strong>10,835,025 PR votes</strong>. Only parties crossing the
                   <strong>325,051-vote PR threshold</strong> are included in the 110-seat proportional allocation.
                 </p>
               </div>
@@ -1016,7 +1009,7 @@
               <div class="image-frame">
                 <img src="Images/parliament_seatmap.png" alt="Projected parliament seatmap for Nepal Election 2082">
                 <div class="image-caption">
-                  The chamber view exported from the notebook makes the core result intuitive:
+                  The chamber view makes the core result intuitive:
                   one party dominates the projected 275-seat parliament, while the rest of the field is much smaller.
                 </div>
               </div>
@@ -1030,12 +1023,11 @@
           <div class="section-header">
             <div>
               <div class="section-kicker">Election + Analysis Timeline</div>
-              <h2 class="section-title">How this repository builds the story.</h2>
+              <h2 class="section-title">How the election story unfolds.</h2>
             </div>
             <p class="section-intro">
-              The sample website used a political-event timeline. This version keeps that narrative role,
-              but anchors it to the actual workflow and evidence in this folder: official constituency data,
-              scraped proportional totals, party alignment, seat modeling, and chart exports.
+              This timeline keeps the sample site’s narrative structure, but focuses on the real analytical path:
+              constituency results, proportional totals, party alignment, seat modeling, and the visuals that explain the outcome.
             </p>
           </div>
 
@@ -1043,20 +1035,20 @@
             <article class="timeline-card">
               <div class="timeline-label">Step 1</div>
               <div>
-                <h3>Constituency results loaded from the Election Commission export</h3>
+                <h3>Constituency results establish the direct winners</h3>
                 <p>
-                  <code>Exports/nepal_election_2082_results_ec.json</code> contains candidate-level FPTP results for all
-                  165 House of Representatives constituencies, including winner flags, party labels, vote totals, and voter counts.
+                  Candidate-level FPTP results cover all 165 House of Representatives constituencies, including winner flags,
+                  party labels, vote totals, and voter counts.
                 </p>
               </div>
             </article>
             <article class="timeline-card">
               <div class="timeline-label">Step 2</div>
               <div>
-                <h3>Proportional votes scraped into a separate party-level file</h3>
+                <h3>Proportional votes add the national party-list picture</h3>
                 <p>
-                  <code>Exports/proportional_votes.json</code> adds national PR vote totals by party, giving the analysis a second ballot type
-                  rather than only constituency outcomes.
+                  National PR vote totals add a second ballot type, making it possible to compare party strength in constituency
+                  contests and on the proportional ballot.
                 </p>
               </div>
             </article>
@@ -1065,8 +1057,7 @@
               <div>
                 <h3>Party names cleaned and aligned across both systems</h3>
                 <p>
-                  The notebook explicitly normalizes naming mismatches and coalition aliases so that vote comparisons are broad,
-                  transparent, and not driven by formatting inconsistencies.
+                  Naming mismatches and coalition aliases are normalized so the comparisons reflect political patterns, not spelling differences.
                 </p>
               </div>
             </article>
@@ -1095,7 +1086,7 @@
               <div>
                 <h3>Margins, efficiency, provincial strength, and key facts are exported as visuals</h3>
                 <p>
-                  The <code>Images/</code> folder turns the notebook into a presentation layer: turnout, closest races,
+                  The exported visuals turn the analysis into a readable public summary: closest races,
                   biggest victories, representation gaps, provincial heatmaps, seat efficiency, and parliament graphics.
                 </p>
               </div>
@@ -1112,9 +1103,9 @@
               <h2 class="section-title">Official FPTP wins, then a 275-seat outlook.</h2>
             </div>
             <p class="section-intro">
-              The seat figures below preserve the distinction that matters in the notebook:
+              The seat figures below preserve the distinction that matters most:
               <strong>165 seats are direct constituency wins</strong>, while the remaining <strong>110 seats are a modeled PR allocation</strong>.
-              That means the combined totals are an analytical outlook, not a claim about a separate official file.
+              The combined totals are therefore a parliament outlook rather than a separate official seat file.
             </p>
           </div>
 
@@ -1248,7 +1239,7 @@
               <div class="image-frame" style="margin-bottom: 18px;">
                 <img src="Images/parliament_companion_charts.png" alt="Projected parliament companion charts">
                 <div class="image-caption">
-                  The notebook’s companion parliament charts show both total seats and how each total splits between direct wins and PR seats.
+                  The companion parliament charts show both total seats and how each total splits between direct wins and PR seats.
                 </div>
               </div>
 
@@ -1272,8 +1263,7 @@
               <h2 class="section-title">Where FPTP and PR tell different stories.</h2>
             </div>
             <p class="section-intro">
-              The sample site had a “big shift” section. In the real repository, the more defensible shift is between
-              Nepal’s two ballot types: who performs better in constituency aggregation, who performs better on the PR ballot,
+              The key shift here is between Nepal’s two ballot types: who performs better in constituency aggregation, who performs better on the PR ballot,
               and how those differences become representation gaps in the seat outlook.
             </p>
           </div>
@@ -1284,7 +1274,7 @@
               <div class="insight-number">+20.12 pp</div>
               <p>
                 RSP’s seat share in the blended 275-seat outlook sits about twenty percentage points above its combined vote share.
-                That is the clearest representation gap in the notebook.
+                That is the clearest representation gap in the seat outlook.
               </p>
             </article>
             <article class="insight-card">
@@ -1333,90 +1323,16 @@
         </div>
       </section>
 
-      <section id="turnout">
-        <div class="section-inner">
-          <div class="section-header">
-            <div>
-              <div class="section-kicker">Participation</div>
-              <h2 class="section-title">Turnout was real, but uneven across provinces.</h2>
-            </div>
-            <p class="section-intro">
-              Using the unique constituency totals in the export, the overall counted turnout is
-              <strong>54.97%</strong>. Madhesh and Bagmati are above the national average, while Sudurpashchim is the lowest by a wide margin.
-            </p>
-          </div>
-
-          <div class="turnout-grid">
-            <article class="section-card">
-              <h3>Voted vs. not counted in turnout</h3>
-              <div class="turnout-donut">
-                <div class="turnout-center">
-                  <div>
-                    <strong>54.97%</strong><br>
-                    <span>counted turnout</span>
-                  </div>
-                </div>
-              </div>
-              <p class="section-intro">
-                The constituency file sums to <strong>10,390,724 counted votes</strong> against
-                <strong>18,903,689 registered voters</strong>. The rest of the ring marks the non-counted share in this repository-based turnout view.
-              </p>
-            </article>
-
-            <article class="section-card">
-              <h3>Turnout by province</h3>
-              <div class="province-list">
-                <div class="province-row">
-                  <strong>Madhesh</strong>
-                  <div class="province-track"><div class="province-fill" style="width:58.22%"></div></div>
-                  <div class="province-value">58.22%</div>
-                </div>
-                <div class="province-row">
-                  <strong>Bagmati</strong>
-                  <div class="province-track"><div class="province-fill" style="width:57.19%"></div></div>
-                  <div class="province-value">57.19%</div>
-                </div>
-                <div class="province-row">
-                  <strong>Lumbini</strong>
-                  <div class="province-track"><div class="province-fill" style="width:56.56%"></div></div>
-                  <div class="province-value">56.56%</div>
-                </div>
-                <div class="province-row">
-                  <strong>Koshi</strong>
-                  <div class="province-track"><div class="province-fill" style="width:54.62%"></div></div>
-                  <div class="province-value">54.62%</div>
-                </div>
-                <div class="province-row">
-                  <strong>Gandaki</strong>
-                  <div class="province-track"><div class="province-fill" style="width:52.93%"></div></div>
-                  <div class="province-value">52.93%</div>
-                </div>
-                <div class="province-row">
-                  <strong>Karnali</strong>
-                  <div class="province-track"><div class="province-fill" style="width:52.40%"></div></div>
-                  <div class="province-value">52.40%</div>
-                </div>
-                <div class="province-row">
-                  <strong>Sudurpashchim</strong>
-                  <div class="province-track"><div class="province-fill" style="width:44.67%"></div></div>
-                  <div class="province-value">44.67%</div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section id="highlights">
         <div class="section-inner">
           <div class="section-header">
             <div>
               <div class="section-kicker">Highlights</div>
-              <h2 class="section-title">The races and numbers that define the dataset.</h2>
+              <h2 class="section-title">The races and numbers that define the election.</h2>
             </div>
             <p class="section-intro">
-              The sample website used a “historic moments” section. Here, the moments are the strongest repository-backed facts:
-              closest race, biggest landslide, strongest vote totals, turnout outliers, and seat-conversion patterns.
+              These are the moments that stand out most clearly in the election data: closest race, biggest landslide,
+              strongest vote totals, and the clearest seat-conversion patterns.
             </p>
           </div>
 
@@ -1425,21 +1341,21 @@
               <div class="tag">Closest race</div>
               <h3>Okhaldhunga Area 1: five votes</h3>
               <p>
-                Bishwa Raj Pokharel defeated Kumar Luitel by just <strong>5 votes</strong>, the narrowest margin in the full 165-constituency file.
+                Bishwa Raj Pokharel defeated Kumar Luitel by just <strong>5 votes</strong>, the narrowest margin among all 165 constituencies.
               </p>
             </article>
             <article class="fact-card">
               <div class="tag">Largest margin</div>
               <h3>Rupandehi Area 3: 50,379 votes</h3>
               <p>
-                Dr. Lekhjung Thapa recorded the biggest victory margin in the dataset, defeating Sushil Gurung by <strong>50,379 votes</strong>.
+                Dr. Lekhjung Thapa recorded the biggest victory margin in the election, defeating Sushil Gurung by <strong>50,379 votes</strong>.
               </p>
             </article>
             <article class="fact-card">
               <div class="tag">Highest FPTP winner vote</div>
               <h3>Balendra Shah: 68,348 votes</h3>
               <p>
-                Jhapa Area 5 produced the highest winning vote total in the constituency file, along with one of the most visible landslide outcomes.
+                Jhapa Area 5 produced the highest winning vote total, along with one of the most visible landslide outcomes.
               </p>
             </article>
             <article class="fact-card">
@@ -1450,17 +1366,17 @@
               </p>
             </article>
             <article class="fact-card">
-              <div class="tag">Turnout outlier</div>
-              <h3>Sudurpashchim trails the field</h3>
+              <div class="tag">Threshold effect</div>
+              <h3>Only six parties clear 3% in PR</h3>
               <p>
-                Sudurpashchim’s <strong>44.67%</strong> turnout is more than ten points below Madhesh and well below the national average, making it the clearest provincial turnout outlier.
+                The 110 proportional seats are distributed only among the six parties that cross the <strong>3%</strong> threshold, which sharply narrows the PR field.
               </p>
             </article>
             <article class="fact-card">
               <div class="tag">Seat efficiency</div>
               <h3>54,032 combined votes per projected RSP seat</h3>
               <p>
-                In the notebook’s blended model, RSP converts support into seats more efficiently than any other party with parliamentary representation.
+                In the blended seat model, RSP converts support into seats more efficiently than any other party with parliamentary representation.
               </p>
             </article>
           </div>
@@ -1472,11 +1388,10 @@
           <div class="section-header">
             <div>
               <div class="section-kicker">Winners</div>
-              <h2 class="section-title">Candidates who stand out in the file itself.</h2>
+              <h2 class="section-title">Candidates who stand out most clearly.</h2>
             </div>
             <p class="section-intro">
-              These cards avoid invented biographies. Each one is grounded in what the repository can actually support:
-              vote totals, constituency context, and why that result matters inside the analysis.
+              These cards stay close to what the election data supports directly: vote totals, constituency context, and why each result matters in the broader picture.
             </p>
           </div>
 
@@ -1491,7 +1406,7 @@
                 </div>
               </div>
               <p>
-                Shah wins with <strong>68,348 votes</strong> and a <strong>49,614-vote margin</strong>. That is both the largest single winner vote total in the file and one of the analysis’ signature landslide outcomes.
+                Shah wins with <strong>68,348 votes</strong> and a <strong>49,614-vote margin</strong>. That is both the largest single winner vote total and one of the election’s signature landslide outcomes.
               </p>
             </article>
 
@@ -1505,7 +1420,7 @@
                 </div>
               </div>
               <p>
-                Thapa posts the widest margin in the dataset, defeating the runner-up by <strong>50,379 votes</strong>. This seat sits at the extreme end of the notebook’s margin distribution.
+                Thapa posts the widest margin in the election, defeating the runner-up by <strong>50,379 votes</strong>. This seat sits at the extreme end of the margin distribution.
               </p>
             </article>
 
@@ -1561,7 +1476,7 @@
                 </div>
               </div>
               <p>
-                Pokharel becomes the face of competitiveness in this dataset: a <strong>13,953 to 13,948</strong> result, decided by only <strong>5 votes</strong>.
+                Pokharel becomes the face of competitiveness in this election: a <strong>13,953 to 13,948</strong> result, decided by only <strong>5 votes</strong>.
               </p>
             </article>
           </div>
@@ -1573,11 +1488,10 @@
           <div class="section-header">
             <div>
               <div class="section-kicker">Analysis Gallery</div>
-              <h2 class="section-title">The exported notebook visuals, turned into a web gallery.</h2>
+              <h2 class="section-title">Analysis visuals, turned into a web gallery.</h2>
             </div>
             <p class="section-intro">
-              You asked for the site to include details from the pictures and outputs in this repository.
-              This section turns the existing exports into a readable sequence so the website covers more than just the headline numbers.
+              This section turns the existing charts into a readable sequence so the website covers more than just the headline numbers.
             </p>
           </div>
 
@@ -1702,8 +1616,8 @@
               <h2 class="section-title">What the analysis says, without over-claiming.</h2>
             </div>
             <p class="section-intro">
-              The sample website ended with implications. This version does the same, but keeps the claims tied to the repository:
-              vote concentration, representation drift, turnout inequality, and electoral competitiveness.
+              The closing section focuses on what the numbers support most clearly:
+              vote concentration, representation drift, and electoral competitiveness.
             </p>
           </div>
 
@@ -1723,7 +1637,7 @@
             <article class="insight-card">
               <h3>Competitiveness varies sharply by seat</h3>
               <p>
-                A five-vote thriller and multiple 40,000-plus landslides live in the same election. The file does not support a single label like “competitive” or “non-competitive” without qualification.
+                A five-vote thriller and multiple 40,000-plus landslides live in the same election. No single label like “competitive” or “non-competitive” captures the whole map without qualification.
               </p>
             </article>
           </div>
@@ -1734,10 +1648,10 @@
     <footer class="footer">
       <div class="footer-inner">
         <div class="footer-card">
-          <h3>Sources and repository artifacts</h3>
+          <h3>Sources</h3>
           <p class="note">
-            This webpage is based on the files already present in this repository: Election Commission constituency results,
-            scraped proportional vote totals, the notebook-generated 275-seat outlook, and the exported charts in <code>Images/</code>.
+            This webpage is based on official constituency results, proportional vote totals, a 275-seat parliament outlook,
+            and the analysis visuals used throughout the page.
             It is not an official Election Commission website.
           </p>
           <div class="source-list">
@@ -1752,11 +1666,11 @@
 
         <div class="footer-card">
           <p class="note">
-            Key repository-backed numbers used on this page: <strong>18,903,689</strong> registered voters,
-            <strong>10,390,724</strong> counted constituency votes, <strong>165</strong> FPTP constituencies,
+            Key numbers used on this page: <strong>18,903,689</strong> registered voters,
+            <strong>165</strong> FPTP constituencies,
             <strong>10,835,025</strong> PR votes, and a modeled <strong>182-seat</strong> majority for RSP in the blended parliament outlook.
           </p>
-          <p class="small">Built as a single static <code>index.html</code> so the site can be opened directly from the repository root.</p>
+          <p class="small">Built as a single static <code>index.html</code>.</p>
         </div>
       </div>
     </footer>
