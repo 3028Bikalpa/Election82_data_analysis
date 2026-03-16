@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Balen Defeats Oli",
+    "constituency": "Jhapa-5",
+    "winner": "Balen Shah (RSP)",
+    "loser": "KP Sharma Oli (CPN-UML)",
+    "whyItMatters": "The man who led the government that crushed youth protests lost his own seat to the face of change.",
+    "emoji": "boxing"
+  },
+  {
+    "title": "Gagan Thapa Loses",
+    "constituency": "Kathmandu",
+    "winner": "RSP Candidate",
+    "loser": "Gagan Thapa (NC President)",
+    "whyItMatters": "Even the most popular face of the Nepali Congress couldn't survive the wave of change.",
+    "emoji": "surprised"
+  },
+  {
+    "title": "Ravi Wins Third Time",
+    "constituency": "Chitwan-2",
+    "winner": "Rabi Lamichhane (RSP)",
+    "loser": "",
+    "whyItMatters": "RSP's chairman won with a huge margin, cementing his party's dominance in central Nepal.",
+    "emoji": "trophy"
+  },
+  {
+    "title": "First Victory Certificate",
+    "constituency": "Kathmandu-1",
+    "winner": "Ranju Darshana Nyaupane (RSP)",
+    "loser": "",
+    "whyItMatters": "She won with 15,455 votes and was the very first candidate in the country to officially receive a victory certificate.",
+    "emoji": "medal"
+  },
+  {
+    "title": "Tech Activist Wins",
+    "constituency": "Independent",
+    "winner": "Mahabir Pun",
+    "loser": "",
+    "whyItMatters": "The famous champion of rural internet connectivity won as an independent, showing voters trust people over parties.",
+    "emoji": "laptop"
+  },
+  {
+    "title": "Economist Enters Parliament",
+    "constituency": "Tanahun-1",
+    "winner": "Swarnim Wagle (RSP)",
+    "loser": "",
+    "whyItMatters": "With 15,911 votes, one of Nepal's most respected economists joins parliament, raising hopes for data-driven policy.",
+    "emoji": "chart"
+  }
+]

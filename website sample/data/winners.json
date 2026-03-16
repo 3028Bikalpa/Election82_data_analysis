@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Balen Shah",
+    "role": "Prime Minister Candidate / RSP",
+    "constituency": "Jhapa-5",
+    "bio": "Former Kathmandu Mayor, ex-rapper, and civil engineer. Known for transforming Kathmandu's footpaths and draining illegal structures. Now set to become Nepal's next Prime Minister.",
+    "emoji": "mic"
+  },
+  {
+    "name": "Rabi Lamichhane",
+    "role": "RSP Chairperson",
+    "constituency": "Chitwan-2",
+    "bio": "Former TV journalist turned politician who founded RSP in 2022. Known for his anti-corruption crusade. Won Chitwan-2 for the third consecutive time.",
+    "emoji": "tv"
+  },
+  {
+    "name": "Swarnim Wagle",
+    "role": "Economist / RSP",
+    "constituency": "Tanahun-1",
+    "bio": "One of Nepal's most respected economists and former NPC vice-chairman. Won with 15,911 votes, bringing technocratic expertise into the new parliament.",
+    "emoji": "chart"
+  },
+  {
+    "name": "Mahabir Pun",
+    "role": "Independent",
+    "constituency": "N/A",
+    "bio": "Tech activist who spent decades bringing the internet to remote mountain villages. Won as an independent, proving that credibility beats party loyalty.",
+    "emoji": "globe"
+  },
+  {
+    "name": "Ranju Darshana Nyaupane",
+    "role": "RSP",
+    "constituency": "Kathmandu-1",
+    "bio": "Was the very first candidate in the entire country to receive an official victory certificate, winning Kathmandu-1 with 15,455 votes.",
+    "emoji": "medal"
+  }
+]

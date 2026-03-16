@@ -1,0 +1,58 @@
+[
+  {
+    "date": "September 4, 2025",
+    "title": "Social Media Banned",
+    "description": "The government banned 26 apps including YouTube, Facebook, and WhatsApp — sparking national outrage.",
+    "icon": "ban",
+    "type": "trigger"
+  },
+  {
+    "date": "September 2025",
+    "title": "Gen Z Takes to the Streets",
+    "description": "Hundreds of thousands of young Nepalis protested against corruption, youth unemployment, and the social media ban.",
+    "icon": "users",
+    "type": "protest"
+  },
+  {
+    "date": "September 2025",
+    "title": "Government Falls",
+    "description": "Under massive public pressure, PM KP Sharma Oli's coalition government collapsed.",
+    "icon": "landmark",
+    "type": "political"
+  },
+  {
+    "date": "September 12, 2025",
+    "title": "Parliament Dissolved, Snap Election Called",
+    "description": "The President dissolved the House of Representatives and announced fresh elections within 6 months.",
+    "icon": "calendar",
+    "type": "political"
+  },
+  {
+    "date": "September 2025",
+    "title": "Nepal's First Female PM",
+    "description": "Former Chief Justice Sushila Karki was appointed interim Prime Minister — Nepal's first ever female head of government.",
+    "icon": "star",
+    "type": "historic"
+  },
+  {
+    "date": "December 2025",
+    "title": "Balen Shah Joins RSP",
+    "description": "Popular Kathmandu Mayor and ex-rapper Balen Shah officially joined RSP as their candidate for Prime Minister.",
+    "icon": "mic",
+    "type": "party"
+  },
+  {
+    "date": "March 5, 2026",
+    "title": "Election Day",
+    "description": "About 11.3 million Nepalis voted across 165 constituencies in a peaceful and historic election.",
+    "icon": "vote",
+    "type": "election"
+  },
+  {
+    "date": "March 7–10, 2026",
+    "title": "RSP Wins Historic Majority",
+    "description": "RSP won 182 out of 275 seats — the first single-party majority in Nepal since 1999.",
+    "icon": "trophy",
+    "type": "result"
+  }
+]

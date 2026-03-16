@@ -1,0 +1,15 @@
+{
+  "electionDate": "Falgun 21, 2082 BS (March 5, 2026)",
+  "totalSeats": 275,
+  "fptpSeats": 165,
+  "prSeats": 110,
+  "registeredVoters": 18900000,
+  "estimatedTurnoutPercent": 60,
+  "estimatedVotesCast": 11340000,
+  "totalCandidates": 3406,
+  "independentCandidates": 1187,
+  "firstTimeVoters": 800000,
+  "provinces": 7,
+  "majorityNeeded": 138,
+  "lastSinglePartyMajorityYear": 1999
+}

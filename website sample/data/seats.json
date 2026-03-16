@@ -1,0 +1,9 @@
+[
+  { "party": "Rastriya Swatantra Party (RSP)", "fptp": 125, "pr": 57, "total": 182, "color": "#E63946" },
+  { "party": "Nepali Congress (NC)", "fptp": 18, "pr": 20, "total": 38, "color": "#2196F3" },
+  { "party": "CPN-UML", "fptp": 9, "pr": 16, "total": 25, "color": "#FF9800" },
+  { "party": "NCP (Maobadi)", "fptp": 7, "pr": 10, "total": 17, "color": "#F44336" },
+  { "party": "Shram Sanskriti Party", "fptp": 3, "pr": 3, "total": 6, "color": "#9C27B0" },
+  { "party": "Rastriya Prajatantra Party (RPP)", "fptp": 1, "pr": 3, "total": 4, "color": "#4CAF50" },
+  { "party": "Others / Independent", "fptp": 2, "pr": 1, "total": 3, "color": "#607D8B" }
+]

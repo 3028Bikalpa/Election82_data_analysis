@@ -1,0 +1,9 @@
+[
+  { "province": "Bagmati", "turnout": 63 },
+  { "province": "Gandaki", "turnout": 65 },
+  { "province": "Lumbini", "turnout": 61 },
+  { "province": "Koshi", "turnout": 58 },
+  { "province": "Madhesh", "turnout": 54 },
+  { "province": "Karnali", "turnout": 60 },
+  { "province": "Sudurpaschim", "turnout": 57 }
+]
