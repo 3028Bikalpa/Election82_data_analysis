@@ -226,6 +226,11 @@
       cursor: zoom-in;
     }
 
+    body.magnifier-touch-active {
+      overflow: hidden;
+      touch-action: none;
+    }
+
     .page-magnifier {
       position: fixed;
       left: 0;
@@ -1199,12 +1204,6 @@
       }
     }
 
-    @media (hover: none), (pointer: coarse) {
-      .magnifier-toggle,
-      .page-magnifier {
-        display: none;
-      }
-    }
   </style>
 </head>
 <body>
@@ -2028,10 +2027,35 @@
       const zoom = 2.2;
       const lensSize = 220;
       const lensOffset = 24;
+      const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
       let active = false;
       let clone = null;
       let frame = null;
       let pointer = null;
+
+      function getPoint(event) {
+        if (event.touches && event.touches[0]) {
+          const touch = event.touches[0];
+          return {
+            clientX: touch.clientX,
+            clientY: touch.clientY,
+            pageX: touch.pageX,
+            pageY: touch.pageY
+          };
+        }
+
+        if (event.changedTouches && event.changedTouches[0]) {
+          const touch = event.changedTouches[0];
+          return {
+            clientX: touch.clientX,
+            clientY: touch.clientY,
+            pageX: touch.pageX,
+            pageY: touch.pageY
+          };
+        }
+
+        return event;
+      }
 
       function syncCloneSize() {
         if (!clone) return;
@@ -2049,7 +2073,7 @@
       }
 
       function updateLens(event) {
-        pointer = event;
+        pointer = getPoint(event);
         if (!active || !clone || frame) return;
         frame = requestAnimationFrame(() => {
           frame = null;
@@ -2081,6 +2105,7 @@
         active = false;
         pointer = null;
         document.body.classList.remove("magnifier-enabled");
+        document.body.classList.remove("magnifier-touch-active");
         toggle.classList.remove("active");
         toggle.setAttribute("aria-pressed", "false");
         lens.classList.remove("visible");
@@ -2092,6 +2117,9 @@
         if (!clone) buildClone();
         syncCloneSize();
         document.body.classList.add("magnifier-enabled");
+        if (isTouchDevice) {
+          document.body.classList.add("magnifier-touch-active");
+        }
         toggle.classList.add("active");
         toggle.setAttribute("aria-pressed", "true");
       }
@@ -2105,6 +2133,19 @@
       });
 
       window.addEventListener("mousemove", updateLens, { passive: true });
+      window.addEventListener("touchstart", (event) => {
+        if (!active) return;
+        updateLens(event);
+      }, { passive: true });
+      window.addEventListener("touchmove", (event) => {
+        if (!active) return;
+        event.preventDefault();
+        updateLens(event);
+      }, { passive: false });
+      window.addEventListener("touchend", () => {
+        if (!active) return;
+        lens.classList.remove("visible");
+      }, { passive: true });
       window.addEventListener("scroll", () => {
         syncCloneSize();
         if (pointer && active) updateLens(pointer);
