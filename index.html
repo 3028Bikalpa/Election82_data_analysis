@@ -38,6 +38,7 @@
       margin: 0;
       color: var(--ink);
       font-family: "Space Grotesk", system-ui, sans-serif;
+      overflow-x: hidden;
       background:
         radial-gradient(circle at top left, rgba(197, 31, 47, 0.12), transparent 30%),
         radial-gradient(circle at top right, rgba(18, 63, 139, 0.16), transparent 28%),
@@ -1063,6 +1064,12 @@
     }
 
     @media (max-width: 720px) {
+      .topbar-inner,
+      .section-inner,
+      .footer-inner {
+        width: min(var(--max), calc(100% - 20px));
+      }
+
       section {
         padding: 72px 0;
       }
@@ -1074,13 +1081,40 @@
 
       .topbar-actions {
         width: 100%;
-        justify-content: space-between;
+        flex-direction: column;
+        align-items: stretch;
       }
 
       .nav {
         justify-content: flex-start;
+        flex-wrap: nowrap;
         overflow-x: auto;
         padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav a {
+        flex: none;
+      }
+
+      .brand {
+        align-items: flex-start;
+      }
+
+      .brand-text strong,
+      .brand-text span {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+      }
+
+      .magnifier-toggle {
+        align-self: flex-start;
       }
 
       .hero-copy,
@@ -1097,6 +1131,38 @@
 
       .timeline-card {
         grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 22px;
+      }
+
+      .hero-copy h1 {
+        max-width: none;
+        font-size: clamp(2.15rem, 11vw, 3.4rem);
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 5.2vw, 1.4rem);
+      }
+
+      .hero-text,
+      .section-intro {
+        font-size: 0.96rem;
+        line-height: 1.65;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .score-main {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .score-main strong {
+        font-size: clamp(2.1rem, 13vw, 2.8rem);
       }
 
       .timeline {
@@ -1119,10 +1185,24 @@
         grid-template-columns: 1fr;
       }
 
+      .party-seats,
+      .winner-role,
+      .winner-seat,
+      .timeline-label {
+        white-space: normal;
+      }
+
       .party-head,
       .party-detail {
         flex-direction: column;
         align-items: flex-start;
+      }
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      .magnifier-toggle,
+      .page-magnifier {
+        display: none;
       }
     }
   </style>
