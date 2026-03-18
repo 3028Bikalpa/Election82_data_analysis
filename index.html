@@ -446,35 +446,105 @@
 
     .timeline {
       display: grid;
-      gap: 14px;
+      gap: 18px;
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 11px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, rgba(197, 31, 47, 0.55), rgba(18, 63, 139, 0.4));
     }
 
     .timeline-card {
       border-radius: 22px;
-      padding: 20px 22px;
+      padding: 22px 24px;
       display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 18px;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
       align-items: start;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,249,241,0.7)),
+        linear-gradient(135deg, rgba(197,31,47,0.1), rgba(18,63,139,0.06));
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 28px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--blue));
+      border: 3px solid rgba(255, 248, 238, 0.96);
+      box-shadow: 0 0 0 6px rgba(197, 31, 47, 0.09);
     }
 
     .timeline-label {
-      font-size: 0.86rem;
-      color: var(--blue);
+      font-size: 0.82rem;
+      color: var(--red);
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(197, 31, 47, 0.08);
+      border: 1px solid rgba(197, 31, 47, 0.15);
+      width: fit-content;
     }
 
     .timeline-card h3 {
-      font-size: 1.08rem;
-      margin-bottom: 8px;
+      font-size: 1.18rem;
+      margin-bottom: 10px;
     }
 
     .timeline-card p {
       margin: 0;
       color: var(--muted);
       line-height: 1.65;
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .timeline-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: rgba(18, 63, 139, 0.08);
+      border: 1px solid rgba(18, 63, 139, 0.1);
+    }
+
+    .timeline-tag.critical {
+      background: rgba(197, 31, 47, 0.1);
+      border-color: rgba(197, 31, 47, 0.16);
+      color: var(--red);
+    }
+
+    .timeline-tag.state {
+      background: rgba(31, 122, 92, 0.1);
+      border-color: rgba(31, 122, 92, 0.16);
+      color: var(--green);
     }
 
     .results-grid,
@@ -899,6 +969,18 @@
         grid-template-columns: 1fr;
       }
 
+      .timeline {
+        padding-left: 20px;
+      }
+
+      .timeline::before {
+        left: 7px;
+      }
+
+      .timeline-card::before {
+        left: -18px;
+      }
+
       .province-row {
         grid-template-columns: 1fr;
       }
@@ -1022,73 +1104,118 @@
         <div class="section-inner">
           <div class="section-header">
             <div>
-              <div class="section-kicker">Election + Analysis Timeline</div>
-              <h2 class="section-title">How the election story unfolds.</h2>
+              <div class="section-kicker">Crisis Timeline</div>
+              <h2 class="section-title">From social media ban to the March 2026 vote.</h2>
             </div>
             <p class="section-intro">
-              This timeline keeps the sample site’s narrative structure, but focuses on the real analytical path:
-              constituency results, proportional totals, party alignment, seat modeling, and the visuals that explain the outcome.
+              A compressed political timeline of the September 2025 upheaval: platform bans, mass protests,
+              resignation, emergency measures, interim leadership, dissolution of parliament, and the election that followed.
             </p>
           </div>
 
           <div class="timeline">
             <article class="timeline-card">
-              <div class="timeline-label">Step 1</div>
+              <div class="timeline-label">4 Sep 2025</div>
               <div>
-                <h3>Constituency results establish the direct winners</h3>
+                <h3>Government bans 26 social media platforms</h3>
                 <p>
-                  Candidate-level FPTP results cover all 165 House of Representatives constituencies, including winner flags,
-                  party labels, vote totals, and voter counts.
+                  Authorities impose a sweeping digital restriction, shutting down 26 social platforms and triggering immediate public backlash.
                 </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag critical">Information crackdown</span>
+                  <span class="timeline-tag">Starting trigger</span>
+                </div>
               </div>
             </article>
             <article class="timeline-card">
-              <div class="timeline-label">Step 2</div>
+              <div class="timeline-label">8 Sep 2025</div>
               <div>
-                <h3>Proportional votes add the national party-list picture</h3>
+                <h3>Nationwide Gen Z protests begin</h3>
                 <p>
-                  National PR vote totals add a second ballot type, making it possible to compare party strength in constituency
-                  contests and on the proportional ballot.
+                  Demonstrations spread across the country, led largely by younger protesters demanding reversal of the ban and political accountability.
                 </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag">National mobilization</span>
+                  <span class="timeline-tag state">Street movement</span>
+                </div>
               </div>
             </article>
             <article class="timeline-card">
-              <div class="timeline-label">Step 3</div>
+              <div class="timeline-label">9 Sep 2025</div>
               <div>
-                <h3>Party names cleaned and aligned across both systems</h3>
+                <h3>Protests peak; Prime Minister K.P. Sharma Oli resigns</h3>
                 <p>
-                  Naming mismatches and coalition aliases are normalized so the comparisons reflect political patterns, not spelling differences.
+                  The protest wave reaches its high point, and Prime Minister K.P. Sharma Oli steps down under mounting political pressure.
                 </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag critical">Government collapse</span>
+                  <span class="timeline-tag">Peak unrest</span>
+                </div>
               </div>
             </article>
             <article class="timeline-card">
-              <div class="timeline-label">Step 4</div>
+              <div class="timeline-label">9-10 Sep 2025</div>
               <div>
-                <h3>FPTP and PR are compared as separate political signals</h3>
+                <h3>Nationwide curfew imposed; army deployed</h3>
                 <p>
-                  The analysis then asks who is larger in raw votes, who is stronger in vote share, and which parties look
-                  constituency-heavy versus PR-heavy.
+                  The state responds to the escalation with curfews and military deployment, marking the most coercive phase of the crisis.
                 </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag critical">Emergency response</span>
+                  <span class="timeline-tag state">Army deployment</span>
+                </div>
               </div>
             </article>
             <article class="timeline-card">
-              <div class="timeline-label">Step 5</div>
+              <div class="timeline-label">12 Sep 2025</div>
               <div>
-                <h3>A 275-seat parliament outlook is constructed</h3>
+                <h3>Sushila Karki appointed Interim Prime Minister</h3>
                 <p>
-                  Official FPTP winners are combined with a PR-seat approximation using a 3% threshold and largest-remainder allocation.
-                  That produces the seat composition shown throughout this page.
+                  An interim administration is formed around Sushila Karki as the political system attempts to stabilize after the resignation.
                 </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag state">Interim leadership</span>
+                  <span class="timeline-tag">Power transition</span>
+                </div>
               </div>
             </article>
             <article class="timeline-card">
-              <div class="timeline-label">Step 6</div>
+              <div class="timeline-label">12 Sep 2025</div>
               <div>
-                <h3>Margins, efficiency, provincial strength, and key facts are exported as visuals</h3>
+                <h3>House of Representatives dissolved; general election announced</h3>
                 <p>
-                  The exported visuals turn the analysis into a readable public summary: closest races,
-                  biggest victories, representation gaps, provincial heatmaps, seat efficiency, and parliament graphics.
+                  On the same day, parliament is dissolved and a new general election is called, shifting the crisis into an electoral reset.
                 </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag critical">Parliament dissolved</span>
+                  <span class="timeline-tag state">Election announced</span>
+                </div>
+              </div>
+            </article>
+            <article class="timeline-card">
+              <div class="timeline-label">13 Sep 2025</div>
+              <div>
+                <h3>Protests subside</h3>
+                <p>
+                  Demonstrations begin to taper off as the interim arrangement and election announcement ease immediate pressure on the streets.
+                </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag">De-escalation</span>
+                  <span class="timeline-tag state">Relative calm</span>
+                </div>
+              </div>
+            </article>
+            <article class="timeline-card">
+              <div class="timeline-label">5 Mar 2026</div>
+              <div>
+                <h3>General election held</h3>
+                <p>
+                  Nepal returns to the ballot box after six months of political rupture, making the election the formal endpoint of the crisis timeline.
+                </p>
+                <div class="timeline-meta">
+                  <span class="timeline-tag critical">Election day</span>
+                  <span class="timeline-tag">Democratic reset</span>
+                </div>
               </div>
             </article>
           </div>
@@ -1471,7 +1598,7 @@
                 <div class="winner-rank">06</div>
                 <div>
                   <h3>Bishwa Raj Pokharel</h3>
-                  <div class="winner-role">Independent | Closest victory in the file</div>
+                  <div class="winner-role">RSP | Closest victory in the file</div>
                   <div class="winner-seat">Okhaldhunga Area 1, Koshi Province</div>
                 </div>
               </div>
